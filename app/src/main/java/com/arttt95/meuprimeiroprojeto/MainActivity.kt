@@ -3,10 +3,12 @@ package com.arttt95.meuprimeiroprojeto
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import java.util.Random
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,9 +22,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun clique(view: View) {
+    fun sortear(view: View) {
 
-        Log.d("MainActivity", "Foi clicado!")
+        val textoResultado = findViewById<TextView>(R.id.text_resultado)
+        val numero = Random().nextInt(2)
+        textoResultado.setText("Vencedor: $numero")
 
     }
 
